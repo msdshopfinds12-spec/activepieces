@@ -103,8 +103,8 @@ const FlowActionMenu: React.FC<FlowActionMenuProps> = ({
   const { checkAccess } = useAuthorization();
   const userHasPermissionToWriteFolder = checkAccess(Permission.WRITE_FOLDER);
   const userHasPermissionToUpdateFlow = checkAccess(Permission.WRITE_FLOW);
-  const userHasPermissionToWriteAppConnection = checkAccess(
-    Permission.WRITE_APP_CONNECTION,
+  const userHasPermissionToReplaceAppConnection = checkAccess(
+    Permission.REPLACE_APP_CONNECTION,
   );
   const userHasPermissionToPushToGit = checkAccess(
     Permission.WRITE_PROJECT_RELEASE,
@@ -331,11 +331,11 @@ const FlowActionMenu: React.FC<FlowActionMenuProps> = ({
             showsDraftOrPublishedVersion &&
             !embedState.isEmbedded && (
               <PermissionNeededTooltip
-                hasPermission={userHasPermissionToWriteAppConnection}
+                hasPermission={userHasPermissionToReplaceAppConnection}
               >
                 <ReplaceConnectionForFlowDialog>
                   <DropdownMenuItem
-                    disabled={!userHasPermissionToWriteAppConnection}
+                    disabled={!userHasPermissionToReplaceAppConnection}
                     onSelect={(e) => e.preventDefault()}
                   >
                     <div className="flex cursor-pointer flex-row gap-2 items-center">
