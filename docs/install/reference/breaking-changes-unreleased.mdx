@@ -8,6 +8,14 @@ Entries here move to [Breaking Changes](/install/reference/breaking-changes) aut
 
 ## What has changed?
 
+#### The Replace button on the Connections page is hidden in embedded apps
+
+In an app that embeds Activepieces with the embed SDK, the Replace button on the Connections page is now hidden by default. The new `embedding.hideReplaceConnection` option controls it, together with the new Replace connection option in the builder's flow menu. The option is `true` when you do not set it, also for SDK versions older than 0.17.0. Activepieces itself, outside an embed, is not affected.
+
+#### What you need to do
+
+If your embedded users should keep replacing connections, update the embed SDK to 0.17.0 and pass `embedding: { hideReplaceConnection: false }` to `configure`.
+
 #### Asana 0.8.0 Create Task sends a plain date as an all-day due date and fails on unknown tags
 
 Asana 0.8.0 changes what an existing **Create Task** step does once it is upgraded to that version. Steps keep running on the version they were built with until you upgrade them.

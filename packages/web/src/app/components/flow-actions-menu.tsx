@@ -329,7 +329,7 @@ const FlowActionMenu: React.FC<FlowActionMenuProps> = ({
           {insideBuilder &&
             !isRunsPage &&
             showsDraftOrPublishedVersion &&
-            !embedState.isEmbedded && (
+            !embedState.hideReplaceConnection && (
               <PermissionNeededTooltip
                 hasPermission={userHasPermissionToReplaceAppConnection}
               >
